@@ -12,9 +12,9 @@
 <script type="text/javascript">
     function destroyImage() {
         var image = document.getElementById("image")
-        var gray = Math.random() * (90 - 40) + 40;
-        var inv = Math.random() * (98 - 60) + 60;
-        var sat = Math.random() * (11000 - 2000) + 2000;
+        var gray = Math.random() * (90 - 5) + 5;
+        var inv = Math.random() * (98 - 15) + 15;
+        var sat = Math.random() * (11000 - 100) + 100;
         image.style.filter = "grayscale(" + gray + "%) invert(" + inv + "%) saturate(" + sat + "%)";
         document.getElementById("p").style.color = 'red';
         document.getElementById("p").innerHTML = 'image destroyed. click on the photo to play again.<br>refresh for a new iamge.';
