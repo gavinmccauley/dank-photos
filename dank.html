@@ -17,13 +17,14 @@
         var sat = Math.random() * (11000 - 2000) + 2000;
         image.style.filter = "grayscale(" + gray + "%) invert(" + inv + "%) saturate(" + sat + "%)";
         document.getElementById("p").style.color = 'red';
-        document.getElementById("p").innerHTML = 'image destroyed. click on the photo to play again. refresh for a new iamge.';
+        document.getElementById("p").innerHTML = 'image destroyed. click on the photo to play again.<br>refresh for a new iamge.';
     }
 </script>
 <body style="background-color: black;">
 <main class="center">
 <h1>dank-photos.git</h1>
-<p id="p">a place to grab a random photo to apply filters of randomly generated intensity to. click on the photo to destroy it.</p>
+<p id="p">a place to grab a random photo to apply filters of randomly generated intensity to.<br>
+click on the photo to destroy it.</p>
 <img src="https://picsum.photos/500" alt="a random image pulled from Lorem Picsum" id="image" class="image" onclick="destroyImage()">
 </main>
 </body>
