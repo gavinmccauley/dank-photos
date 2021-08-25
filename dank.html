@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 .center {
     margin: auto;
@@ -11,10 +12,20 @@
 .image {
     box-shadow:  0 0 10px 1px lime;
 }
+.retard {
+    visibility: visible;
+}
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
+    function get4chan() {
+        var iframe = document.getElementById("retard");
+        var name = "codemzy";$.get('https://boards.4chan.org/b/' + name, function(response) {  console.log(response);});
+        var bepis = $(name).find(".fileThumb").attr("src");
+        document.getElementById("image").src = "https://thumbnail.imgbin.com/14/5/20/imgbin-pepe-the-frog-kermit-the-frog-pep-le-pew-frog-33eQdhSq18HNSWf8HDXjDbe3U_t.jpg";
+    }
     function destroyImage() {
-        var image = document.getElementById("image")
+        var image = document.getElementById("image");
         var gray = Math.random() * (90 - 5) + 5;
         var inv = Math.random() * (98 - 15) + 15;
         var sat = Math.random() * (11000 - 100) + 100;
@@ -28,8 +39,9 @@
 <body style="background-color: black;">
 <main class="center">
 <h1>dank-photos.git</h1>
-<p id="p">a place to grab a random photo to apply filters of randomly generated intensity to.<br> 
+<p id="p" onclick="get4chan()">a place to grab a random photo to apply filters of randomly generated intensity to.<br> 
 click on the photo to destroy it.</p>
-<img src="https://picsum.photos/500" alt="a random image pulled from Lorem Picsum" id="image" class="image" onclick="destroyImage()">
+<img src="" id="image" class="image" onclick="destroyImage()">
 </main>
+<iframe id="retard" src="https://boards.4chan.org/b/"></iframe>
 </body>
